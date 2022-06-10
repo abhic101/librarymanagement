@@ -1,0 +1,26 @@
+export interface IssueRequest {
+    _id:string,
+    student:{
+        _id:string,
+        firstname:string,
+        secondname:string,
+        email:string,
+        dateofbirth:string,
+        gender:string,
+        department:string,
+        year:string,
+        rollno:string,
+        password:string
+    },
+    book:{
+        _id:string,
+        name:string,
+        pageno:string,
+        author:string,
+        category:string,
+        price:string,
+        publication:string,
+        avilablenumber:string,
+        thumbnail:string
+    }
+}

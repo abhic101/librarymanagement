@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/*__________header and primary navigation bar__________*/
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.navbar {
+    background-color: white;
+}
+
+#head {
+    z-index: 100;
+    box-shadow: 0px 0px 5px 0px rgb(192, 192, 192);
+    position: sticky;
+    top: 0;
+}
+
+.nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 500ms ease !important;
+}
+
+.nav-link:hover {
+    color: black !important;
+}
+
+#logout-link {
+    cursor:pointer;
+}
+
+/*____________Wecome msg and secondary navbar____________*/
+#nav2 {
+    border-bottom:1px solid rgb(200, 234, 255);
+}
+
+.nav-link2 {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.welcome-msg {
+    margin:0;
+    padding: 0;
+    font-weight: 300;
+}
+
+.active {
+    border-radius: 1px;
+    border-bottom: 2px solid rgb(28, 107, 252);
+}
+
+.dropdown-menu {
+    margin-left: -18px;
+}
+
+/*____________body content____________*/
+.main-content {
+    margin-bottom: 70px;
+}
+
+marquee {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px;
+    font-size: 3em;
+}
+
+.smallcaps {
+    font-size: .7em;
+}
+
+.card {
+    width: 80%;
+    margin: 20px auto;
+    transition: .5s;
+}
+
+.card-body {
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 10px 0px rgb(180, 180, 180);
+    border: 1px solid lightskyblue;
+}
+
+.card-thumbnail {
+    width: 90%;
+    max-width: 200px;
+    height: 270px;
+    box-shadow: 0px 0px 5px 0px rgb(192, 192, 192);
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 1px;
+}
+
+.card-title {
+    font-size: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    border-radius: 1px;
+}
+
+.card-table-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 14px;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.th, #danger, #success {
+    font-weight: 500;
+}
+
+
+
+.th {
+    color: rgb(70, 70, 70);
+}
+
+.td {
+    color: rgb(101, 101, 101);
+    font-weight: 400;
+}
+
+.card-footer {
+    background-color: rgb(250, 250, 250);
+    text-align: right;
+}
+
+.card-button {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+
+/*________Footer style________*/
+
+.footer-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    box-shadow: 0px -3px 7px 0px rgb(223, 223, 223);;
+    padding-top: 40px;
+    background-color: white;
+}
+
+.footer-heading {
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.footer-link {
+    color: grey;
+    text-decoration: none;
+    font-weight: 400;
+    transition: 500ms ease;
+}
+
+.footer-link:hover {
+    color: black;
+
+}
+
+.address-container {
+    position: relative;
+    right: -100px;
+}
+
+.address {
+    font-style:normal;
+    margin-left: 20px;
+    color: gray;
+    font-weight: lighter;
+}
+
+
+.social-container {
+    text-align: center;
+}
+
+.links-container {
+    margin-top: 60px;
+}
+
+.facebook-link:hover {
+    color: #3b5998;
+}
+
+.twitter-link:hover {
+    color: #00acee;
+}
+
+.instagram-link:hover {
+    color: #c32aa3;
+}
+
+.btt {
+    float: right;
+    margin-right: 100px;
+    font-size: 18px;
+}
+
+.footnote-container {
+    padding-top: 10px;
+    background-color: white;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.footnote {
+    color:rgb(194, 194, 194);
+}
+
+/*__________RWD Media Queries__________*/
+@media (max-width: 991.98px) {
+    .address-container {
+        display: none;
+    }
+
+    .footer-container {
+        display: block;
+        padding-bottom: 8px;
+    }
+
+    .btt {
+        display: none;
+    }
+
+    .card-body {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .card-thumbnail {
+        height: 270px;
+        width: 200px;
+    }
+
+    .thumbnail-wrapper {
+        margin: 5px auto;
+    }
+
+    .card-title {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .card-footer {
+        text-align: center;
+    }
+}
+
+@media (max-width: 770px) {
+    .card-table-wrapper {
+        grid-template-columns: auto;
+        row-gap: 0;
+        margin: 0;
+    }
+
+    .th, .td {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .th {
+        margin-top: 20px;
+    }
+
+    .th-top {
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .links-container {
+        margin-top: 30px;
+    }
+}
+

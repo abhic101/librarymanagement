@@ -1,0 +1,165 @@
+<span id="top"></span>
+<nav class="navbar navbar-expand-lg navbar-light" id="head">
+    <a class="navbar-brand" href="#"><img src="/assets/elibrary-logo.png" alt="logo" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav" id="navbarli">
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Home</a>
+            </li>
+            <li class="nav-item dropdown" id="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-cog" aria-hidden="true"></i> &nbsp;Profile Settings
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="['/student/viewprofile']"
+                        routerLinkActive="router-link-active">View Profile</a>
+                    <a class="dropdown-item" [routerLink]="['/student/editprofile']"
+                        routerLinkActive="router-link-active">Edit Profile</a>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" [routerLink]="['/student/changepassword']"
+                        routerLinkActive="router-link-active">Change Password</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"  id="logout-link"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-light" id="nav2" style="background-color:rgb(230, 245, 255)">
+
+    <h6 class="navbar-brand welcome-msg">Welcome, Administrator</h6>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item nav-link2">
+                <a class="nav-link" [routerLink]="['/admin']" routerLinkActive="router-link-active" >Dashboard <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item nav-link2">
+                <a class="nav-link" [routerLink]="['/admin/newstudent']" routerLinkActive="router-link-active" >Register Student <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown nav-link2 active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Books
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" [routerLink]="['/admin/add/books']" routerLinkActive="router-link-active" >Add Books</a>
+                    <a class="dropdown-item" [routerLink]="['/admin/view/books']" routerLinkActive="router-link-active" >Edit Books</a>
+                    <a class="dropdown-item" [routerLink]="['/admin/bookrequests']" routerLinkActive="router-link-active" >Book Requests</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown nav-link2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Category
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" [routerLink]="['/admin/add/category']" routerLinkActive="router-link-active">Add Category</a>
+                    <a class="dropdown-item" [routerLink]="['/admin/view/category']" routerLinkActive="router-link-active" >Edit Category</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown nav-link2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Authors
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" [routerLink]="['/admin/add/author']" routerLinkActive="router-link-active" >Add Authors</a>
+                    <a class="dropdown-item" [routerLink]="['/admin/view/author']" routerLinkActive="router-link-active" >Edit Authors</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown nav-link2">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Issue Books
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" [routerLink]="['/admin/issuerequest']" routerLinkActive="router-link-active" >Issue Requests</a>
+                    <a class="dropdown-item" [routerLink]="['/admin/issuebook']" routerLinkActive="router-link-active" >New Issue</a>
+                    <a class="dropdown-item" [routerLink]="['/admin/view/issuebook']" routerLinkActive="router-link-active" >Edit Issued Books</a>
+                    
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<marquee> Library Timing Opening 9:30 AM Closing 6:30 AM Sunday OFF</marquee>
+
+<section class="main-content">
+    
+    <h2>R<span class="smallcaps">EQUESTED</span> B<span class="smallcaps">OOKS</span></h2>
+    <div class="container" *ngIf="totalReq$ | async as request">
+        
+        
+        <div class="card" *ngFor="let r of request">
+            <div class="card-header text-center">
+                <h5 class="card-title">{{r.name}}</h5>
+            </div>
+            <div class="card-body">
+                <div class="card-content-wrapper">
+                    
+                    <div class="card-table-wrapper">
+                        <div class="th th-top"><i class="fa fa-envelope-o" aria-hidden="true"></i> Author</div>
+                        <div class="td">{{r.author}}</div>
+                        <div class="th"><i class="fa fa-calendar-o" aria-hidden="true"></i> Catagory</div>
+                        <div class="td">{{r.category}}</div>
+                        <div class="th"><i class="fa fa-university" aria-hidden="true"></i> Publicationt</div>
+                        <div class="td">{{r.publication}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <a href="#" class="btn btn-primary card-button">Add</a>
+            </div>
+          </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="footer-container">
+        <div class="address-container grid-item">
+            <h3 class="footer-heading address-heading">Contact Us</h3>
+            <address class="address">
+                    <i class="fa fa-map-marker" aria-hidden="true" ></i>&nbsp;&nbsp;&nbsp;&nbsp;B-124, Nehru Nagar<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Delhi - 100101<br>
+                    <i class="fa fa-phone" aria-hidden="true" style="padding-bottom: 5px;"></i>&nbsp;&nbsp;&nbsp;Phone: <a href="tel:+11112345678" class="footer-link" style="padding-bottom: 5px;">+111-123-45-678</a><br>
+                    <i class="fa fa-envelope" aria-hidden="true" style="padding-bottom: 5px;"></i>&nbsp;&nbsp;Mail us: <a href="mailto:example@gmail.com" class="footer-link">example@gmail.com</a><br><br>
+            </address>
+        </div>
+        <div class="social-container grid-item">
+            <a class="footer-heading social-heading logo" href="#"><img src="/assets/elibrary-logo.png" alt="logo" class="logo"></a>
+            <div class="links-container">
+                <a href="https://www.facebook.com/" target="_blank" class="footer-link facebook-link">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>&nbsp;&nbsp;FACEBOOK 
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.twitter.com" target="_blank" class="footer-link twitter-link">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;&nbsp;TWITTER
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.instagram.com" target="_blank" class="footer-link instagram-link">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>&nbsp;&nbsp;INSTAGRAM
+                </a>
+            </div>
+        </div>
+        <div class="btt-container grid-item">
+            <a href="admin/bookrequests#top" rel="bookmark" class="footer-link btt">Back to Top &nbsp;<i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="footnote-container">
+        <span class="footnote">By Abhishek Sharma and Billo Probol Dutta</span>
+    </div>
+</footer>
