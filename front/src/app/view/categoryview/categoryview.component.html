@@ -1,0 +1,20 @@
+<div class="card" style="width: 18rem;" *ngIf="book">
+    <div class="card-body">
+        <h5 class="card-title">{{book.category}}</h5>
+        <button class="btn btn-outline-primary" (click)="showEditForm()">Edit</button>
+        <button class="btn btn-outline-danger" (click)="deleteCategory()">Delete</button>
+    </div>
+</div>
+
+<div *ngIf="showEdit">
+    <h2 class="h2">Edit Category In Library </h2>
+
+    <form class="formView" [formGroup]="editCategoryForm">
+        <div class="form-group justify-content-end">
+            <label for="exampleInputEmail1">Category</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                formControlName="category" placeholder="Enter New Category" [(ngModel)]="book.category">
+        </div>
+        <button type="button" class="btn btn-primary" id="button" (click)="editCategory()">Edit</button>
+    </form>
+</div>

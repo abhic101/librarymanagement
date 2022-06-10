@@ -1,0 +1,23 @@
+<div class="card" style="width: 18rem;" *ngIf="author">
+    <div class="card-body">
+        <h5 class="card-title">{{author.author}}</h5>
+        <button class="btn btn-outline-primary" (click)="showEdit()">Edit</button>
+        <button class="btn btn-outline-danger" (click)="deleteAuthor()">Delete</button>
+    </div>
+</div>
+
+<div *ngIf="showEditForm">
+    <h2 class="h2">Add Authors In Library </h2>
+
+    <form class="formView" [formGroup]="authorForm">
+        <div class="form-group justify-content-end">
+            <label for="exampleInputEmail1">Author</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                formControlName="author" placeholder="Enter Edit Author" [(ngModel)]="author.author">
+            <span class="text-danger"
+                *ngIf="authorForm.get('author').hasError('required') && authorForm.get('author').touched">* This
+                Field is required</span>
+        </div>
+        <button type="button" class="btn btn-primary" id="button" (click)="editAuthor()"> Edit Author</button>
+    </form>
+</div>

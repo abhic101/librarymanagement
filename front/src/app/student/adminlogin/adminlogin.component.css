@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/*__________header and navigation bar__________*/
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.navbar {
+    box-shadow: 0px 0px 5px 0px rgb(192, 192, 192);
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 500ms ease !important;
+}
+
+.nav-link:hover {
+    color: black !important;
+}
+
+/*__________form container__________*/
+
+.container-card {
+    width: 60%;
+    margin: 50px auto 103px;
+    padding: 20px;
+    background-color: rgb(250, 250, 250);
+}
+
+.form-banner {
+    width: 130px;
+}
+
+.form-heading {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+
+.form-group {
+    width: 55%;
+    margin: 10px auto;
+}
+
+.alert {
+    width: 60%;
+    margin: 30px auto 0;
+}
+
+.form-control {
+    height: 50px;
+}
+
+.username-container {
+    margin-top: 30px;
+}
+
+.password-container {
+    margin-top: 20px;
+}
+
+.btn-sign-in-container {
+    margin-top: 30px;
+}
+
+.fa-key, .fa-id-card-o {
+    width: 20px;
+}
+
+.btn-sign-in {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    font-size: 19px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+}
+
+.text-danger {
+    position: absolute;
+}
+
+/*________Footer style________*/
+.footer-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    box-shadow: 0px -3px 7px 0px rgb(223, 223, 223);;
+    padding-top: 40px;
+    background-color: white;
+}
+
+.footer-heading {
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.footer-link {
+    color: grey;
+    text-decoration: none;
+    font-weight: 400;
+    transition: 500ms ease;
+}
+
+.footer-link:hover {
+    color: black;
+
+}
+
+.address-container {
+    position: relative;
+    right: -100px;
+}
+
+.address {
+    font-style:normal;
+    margin-left: 20px;
+    color: gray;
+    font-weight: lighter;
+}
+
+
+.social-container {
+    text-align: center;
+}
+
+.links-container {
+    margin-top: 60px;
+}
+
+.facebook-link:hover {
+    color: #3b5998;
+}
+
+.twitter-link:hover {
+    color: #00acee;
+}
+
+.instagram-link:hover {
+    color: #c32aa3;
+}
+
+.btt {
+    float: right;
+    margin-right: 100px;
+    font-size: 18px;
+}
+
+.footnote-container {
+    padding-top: 10px;
+    background-color: white;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.footnote {
+    color:rgb(194, 194, 194);
+}
+
+/*__________RWD Media Queries__________*/
+@media (max-width: 991.98px) {
+    .container-card {
+        width: 85%;
+    }
+
+    .address-container {
+        display: none;
+    }
+
+    .footer-container {
+        display: block;
+    }
+
+    .btt {
+        display: none;
+    }
+
+    .footer-container {
+        padding-bottom: 8px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .form-group {
+        width: 80%;
+    }
+
+    .alert {
+        width: 80%;
+    }
+
+    .links-container {
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,129 @@
+<span id="top"></span>
+<nav class="navbar navbar-expand-lg navbar-light" id="head">
+    <a class="navbar-brand" href="#"><img src="/assets/elibrary-logo.png" alt="logo" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav" id="navbarli">
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Home</a>
+            </li>
+            <li class="nav-item dropdown" id="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-cog" aria-hidden="true"></i> &nbsp;Profile Settings
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" [routerLink]="['/student/viewprofile']"
+                        routerLinkActive="router-link-active">View Profile</a>
+                    <a class="dropdown-item" [routerLink]="['/student/editprofile']"
+                        routerLinkActive="router-link-active">Edit Profile</a>
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" [routerLink]="['/student/changepassword']"
+                        routerLinkActive="router-link-active">Change Password</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="logoutStudent()" id="logout-link"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-light" id="nav2" style="background-color:rgb(230, 245, 255)">
+
+    <h6 class="navbar-brand welcome-msg">Welcome, <span class="span"> {{user.firstname}} {{user.secondname}}</span></h6>
+
+    <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item-2">
+              <a class="nav-link active" href="/student/dashbord">Issued Books</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/student/booksearch']"
+              routerLinkActive="router-link-active">Search Book</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/student/bookrequest']"
+              routerLinkActive="router-link-active">Request Book</a>
+            </li>
+          </ul>
+    </div>
+</nav>
+
+<marquee> Library Timing Opening 9:30 AM Closing 6:30 AM Sunday OFF</marquee>
+
+<section class="main-content">
+    <h1> I<span class="smallcaps">SSUED</span> B<span class="smallcaps">OOKS</span> </h1>
+    
+    <div class="container" *ngIf="books$ | async as books">
+        
+        
+        <div class="card" *ngFor="let item of books">
+            <div class="card-body" >
+                <div class="thumbnail-wrapper">
+                    <img src="{{item.thumbnail}}" alt="book thumbnail" class="card-thumbnail">
+                </div>
+                <div class="card-content-wrapper">
+                    <h5 class="card-title"> &nbsp;{{item.name}}</h5>
+                    <div class="card-table-wrapper">
+                        <div class="th th-top"><i class="fa fa-user-secret" aria-hidden="true"></i> Author</div>
+                        <div class="td">{{item.author}}</div>
+                        <div class="th"><i class="fa fa-building-o" aria-hidden="true"></i> Publication</div>
+                        <div class="td">{{item.author}}</div>
+                        <div class="th"><i class="fa fa-list-ul" aria-hidden="true"></i> Catagory</div>
+                        <div class="td">{{item.category}}</div>
+                        <div class="th"><i class="fa fa-user-o" aria-hidden="true"></i> Alloted To</div>
+                        <div class="td">{{user.firstname}} {{user.secondname}} ({{item.rollno}})</div>
+                        <div class="th"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Issue Date</div>
+                        <div class="text-success td" id="success">{{item.fromdate}}</div>
+                        <div class="th"><i class="fa fa-calendar-minus-o" aria-hidden="true"></i> Return Date</div>
+                        <div class="text-danger td" id="danger">{{item.todate}}</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="address-container grid-item">
+            <h3 class="footer-heading address-heading">Contact Us</h3>
+            <address class="address">
+                    <i class="fa fa-map-marker" aria-hidden="true" ></i>&nbsp;&nbsp;&nbsp;&nbsp;B-124, Nehru Nagar<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Delhi - 100101<br>
+                    <i class="fa fa-phone" aria-hidden="true" style="padding-bottom: 5px;"></i>&nbsp;&nbsp;&nbsp;Phone: <a href="tel:+11112345678" class="footer-link" style="padding-bottom: 5px;">+111-123-45-678</a><br>
+                    <i class="fa fa-envelope" aria-hidden="true" style="padding-bottom: 5px;"></i>&nbsp;&nbsp;Mail us: <a href="mailto:example@gmail.com" class="footer-link">example@gmail.com</a><br><br>
+            </address>
+        </div>
+        <div class="social-container grid-item">
+            <a class="footer-heading social-heading logo" href="#"><img src="/assets/elibrary-logo.png" alt="logo" class="logo"></a>
+            <div class="links-container">
+                <a href="https://www.facebook.com/" target="_blank" class="footer-link facebook-link">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>&nbsp;&nbsp;FACEBOOK 
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.twitter.com" target="_blank" class="footer-link twitter-link">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;&nbsp;TWITTER
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.instagram.com" target="_blank" class="footer-link instagram-link">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>&nbsp;&nbsp;INSTAGRAM
+                </a>
+            </div>
+        </div>
+        <div class="btt-container grid-item">
+            <a href="student/dashbord#top" rel="bookmark" class="footer-link btt">Back to Top &nbsp;<i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="footnote-container">
+        <span class="footnote">By Abhishek Sharma and Billo Probol Dutta</span>
+    </div>
+</footer>

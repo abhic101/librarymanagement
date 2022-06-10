@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/*__________header and primary navigation bar__________*/
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.navbar {
+    background-color: white;
+}
+
+#head {
+    z-index: 100;
+    box-shadow: 0px 0px 5px 0px rgb(192, 192, 192);
+    position: sticky;
+    top: 0;
+}
+
+.nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 500ms ease !important;
+}
+
+.nav-link:hover {
+    color: black !important;
+}
+
+/*__________body content__________*/
+
+.h2{
+    justify-content: center;
+    text-align: center;
+    margin-top: 32px;
+    font-size: 43px;
+    font-weight: 400;
+    font-size: 3em;
+}
+
+.smallcaps {
+    font-size: .7em;
+}
+
+.form-wrapper {
+    width: 50%;
+    margin: 64px auto;
+    padding: 10px;
+}
+
+.btn {
+    margin-top: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/*________Footer style________*/
+
+.footer-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    box-shadow: 0px -3px 7px 0px rgb(223, 223, 223);;
+    padding-top: 40px;
+    background-color: white;
+}
+
+.footer-heading {
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.footer-link {
+    color: grey;
+    text-decoration: none;
+    font-weight: 400;
+    transition: 500ms ease;
+}
+
+.footer-link:hover {
+    color: black;
+
+}
+
+.address-container {
+    position: relative;
+    right: -100px;
+}
+
+.address {
+    font-style:normal;
+    margin-left: 20px;
+    color: gray;
+    font-weight: lighter;
+}
+
+
+.social-container {
+    text-align: center;
+}
+
+.links-container {
+    margin-top: 60px;
+}
+
+.facebook-link:hover {
+    color: #3b5998;
+}
+
+.twitter-link:hover {
+    color: #00acee;
+}
+
+.instagram-link:hover {
+    color: #c32aa3;
+}
+
+.btt {
+    float: right;
+    margin-right: 100px;
+    font-size: 18px;
+}
+
+.footnote-container {
+    padding-top: 10px;
+    background-color: white;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.footnote {
+    color:rgb(194, 194, 194);
+}
+
+/*__________RWD Media Queries__________*/
+@media (max-width: 991.98px) {
+    .address-container {
+        display: none;
+    }
+
+    .footer-container {
+        display: block;
+        padding-bottom: 8px;
+    }
+
+    .btt {
+        display: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .links-container {
+        margin-top: 30px;
+    }
+
+    .form-wrapper {
+        width: 80%;
+    }
+}

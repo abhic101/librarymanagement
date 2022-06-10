@@ -1,0 +1,55 @@
+<div class="card" style="width: 18rem;" *ngIf="books">
+    <div class="card-body">
+        <h5 class="card-title">{{books.name}}</h5>
+        <p class="card-text">{{books.author}}</p>
+        <button class="btn btn-outline-primary" (click)="showEdit()">Edit</button>
+        <button class="btn btn-outline-danger" (click)="deleteData()">Delete</button>
+    </div>
+</div>
+
+<div *ngIf="showEditForm">
+
+    <h2 class="h2">Edit Book In Library </h2>
+
+    <form class="formView" [formGroup]="editBookForm">
+        <div class="form-group justify-content-end">
+            <label for="exampleInputEmail1">Book Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                formControlName="name" placeholder="Enter New Book Name" [(ngModel)]="books.name">
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Page Number</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="pageno"
+                placeholder="Enter Page Numbers"  [(ngModel)]="books.pageno">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Author</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="author"
+                placeholder="Enter Name Of Author"  [(ngModel)]="books.author">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Category</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="category"
+                placeholder="Enter Category Of Book"  [(ngModel)]="books.category">
+            
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Price</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="price"
+                placeholder="Enter Price Of Book"  [(ngModel)]="books.price">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Publication</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="publication"
+                placeholder="Enter Publication Of Book" [(ngModel)]="books.publication">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Book Stock</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="avilablenumber"
+                placeholder="Enter Stock Of Books" [(ngModel)]="books.avilablenumber">
+        </div>
+
+        <button class="btn btn-primary" (click)="editData()">Edit Data</button>
+    </form>
+</div>

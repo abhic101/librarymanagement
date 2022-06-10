@@ -1,0 +1,38 @@
+.card {
+    margin: 47px auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+.card-body h5{
+    font-size: 26px;
+}
+
+.card-body button{
+    margin-left: 12px;
+}
+
+#exampleInputEmail1{
+    width: 67%;
+}
+
+#exampleInputPassword1{
+    width: 67%;
+}
+
+.formView{
+    margin-left: 336px;
+    margin-top: 64px;
+    margin-bottom: 55px;
+}
+
+.h2{
+    justify-content: center;
+    text-align: center;
+    margin-top: 32px;
+    font-size: 43px;
+}
+
+.form-group{
+    margin-bottom: 6px;
+}

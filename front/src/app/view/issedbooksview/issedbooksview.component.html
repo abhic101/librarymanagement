@@ -1,0 +1,54 @@
+<div class="card" style="width: 18rem;" *ngIf="book">
+    <div class="card-body">
+        <h5 class="card-title">Book Name : {{book.name}}</h5>
+        <h5 class="card-title">Book Author : {{book.author}}</h5>
+        <h5 class="card-title">Book Category : {{book.category}}</h5>
+        <h5 class="card-title">Roll Number : {{book.rollno}}</h5>
+        <button class="btn btn-outline-primary" (click)="showEditForm()">Edit</button>
+        <button class="btn btn-outline-danger" (click)="deleteIssuedBook()">Delete</button>
+    </div>
+</div>
+
+<div *ngIf="showForm">
+    <h2 class="h2">Issue Book In Library </h2>
+
+    <form class="formView" [formGroup]="issueBookForm">
+        <div class="form-group justify-content-end">
+            <label for="exampleInputEmail1">Book Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" formControlName="name"
+                placeholder="Enter Book Name" [(ngModel)]="book.name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Page Number</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="pageno"
+                placeholder="Enter Page Number Of Books" [(ngModel)]="book.pageno">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Author</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="author"
+                placeholder="Enter Author Of Books" [(ngModel)]="book.author">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Category</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="category"
+                placeholder="Enter Category Of Books" [(ngModel)]="book.category">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Roll Number</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="rollno"
+                placeholder="Enter Roll Number Of Student To Issued" [(ngModel)]="book.rollno">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Start Date</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="fromdate"
+                placeholder="Enter Start Date  Issed In Form DD-MM-YEAR" [(ngModel)]="book.fromdate">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Last Date</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" formControlName="todate"
+                placeholder="Enter Last Date  Issed In Form DD-MM-YEAR" [(ngModel)]="book.todate">
+        </div>
+
+        <button class="btn btn-primary" (click)="formSubmit()" id="button">Issued Books</button>
+    </form>
+</div>

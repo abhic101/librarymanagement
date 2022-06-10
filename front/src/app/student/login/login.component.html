@@ -1,0 +1,125 @@
+<span id="top"></span>
+<nav class="navbar navbar-expand-lg navbar-light" id="head">
+    <a class="navbar-brand" href="#"><img src="/assets/elibrary-logo.png" alt="logo" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/student/adminlogin']" routerLinkActive="router-link-active" id="signinnav" >
+                    <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;Admin Login
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fa fa-info" aria-hidden="true"></i>&nbsp;&nbsp;About Us
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;Contact Us
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-card">
+    <div class="formcard form">
+        <div class="text-center">
+            <img src="/assets/loginbanner.png" alt="login-banner" class="form-banner">
+        </div>
+        <h2 class="form-heading">Student Sign in</h2>
+        <div>
+            <form class="formshow" [formGroup]="studentLoginForm">
+                <div *ngIf="wrongeUserName">
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong> Error ! </strong> Incorrect User ID 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                </div>
+                <div *ngIf="wrongePassword">
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong> Error ! </strong> Incorrect Password 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                </div>
+                <div class="form-group col-lg-8 username-container">
+                    <label for="exampleInputEmail1">Student ID</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Student ID" formControlName="rollno">
+                    </div>
+                    <span class="text-danger" *ngIf="studentLoginForm.get('rollno').hasError('required') && studentLoginForm.get('rollno').touched">* This Field is required</span>
+                </div>
+                <div class="form-group col-lg-8  password-container">
+                    <label for="exampleInputPassword1">Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"      id="basic-addon1">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                    formControlName="password">
+                    </div>
+                    <span class="text-danger" *ngIf="studentLoginForm.get('password').hasError('required') && studentLoginForm.get('password').touched">* This Field is required</span>
+                </div>
+                <div class="form-group col-lg-8 btn-sign-in-container">
+                    <button type="submit" class="btn btn-block btn-primary btn-sign-in" [disabled]="!studentLoginForm.valid" (click)="loginStudent()">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="address-container grid-item">
+            <h3 class="footer-heading address-heading">Contact Us</h3>
+            <address class="address">
+                    <i class="fa fa-map-marker" aria-hidden="true" ></i>&nbsp;&nbsp;&nbsp;&nbsp;B-124, Nehru Nagar<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Delhi - 100101<br>
+                    <i class="fa fa-phone" aria-hidden="true" style="padding-bottom: 5px;"></i>&nbsp;&nbsp;&nbsp;Phone: <a href="tel:+11112345678" class="footer-link" style="padding-bottom: 5px;">+111-123-45-678</a><br>
+                    <i class="fa fa-envelope" aria-hidden="true" style="padding-bottom: 5px;"></i>&nbsp;&nbsp;Mail us: <a href="mailto:example@gmail.com" class="footer-link">example@gmail.com</a><br><br>
+            </address>
+        </div>
+        <div class="social-container grid-item">
+            <a class="footer-heading social-heading logo" href="#"><img src="/assets/elibrary-logo.png" alt="logo" class="logo"></a>
+            <div class="links-container">
+                <a href="https://www.facebook.com/" target="_blank" class="footer-link facebook-link">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>&nbsp;&nbsp;FACEBOOK 
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.twitter.com" target="_blank" class="footer-link twitter-link">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;&nbsp;TWITTER
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.instagram.com" target="_blank" class="footer-link instagram-link">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>&nbsp;&nbsp;INSTAGRAM
+                </a>
+            </div>
+        </div>
+        <div class="btt-container grid-item">
+            <a href="student#top" rel="bookmark" class="footer-link btt">Back to Top &nbsp;<i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="footnote-container">
+        <span class="footnote">By Abhishek Sharma and Billo Probol Dutta</span>
+    </div>
+</footer>

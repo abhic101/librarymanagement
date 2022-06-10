@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+.card button{
+    margin-left: 12px;
+    margin-top: 14px;
+}
+
+.card {
+    margin: 47px auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+#exampleInputEmail1{
+    width: 67%;
+}
+
+#exampleInputPassword1{
+    width: 67%;
+}
+
+.formView{
+    margin-left: 336px;
+    margin-top: 64px;
+}
+
+.h2{
+    justify-content: center;
+    text-align: center;
+    margin-top: 32px;
+    font-size: 43px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 52px;
+    word-spacing: 5px;
+}
+
+form label {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.formView div{
+    margin-bottom: unset;
+}
+
+#button{
+    margin-top: 32px;
+    margin-bottom: 19px;
+}

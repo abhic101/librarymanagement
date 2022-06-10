@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/*__________header and primary navigation bar__________*/
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.navbar {
+    background-color: white;
+}
+
+#head {
+    z-index: 100;
+    box-shadow: 0px 0px 5px 0px rgb(192, 192, 192);
+    position: sticky;
+    top: 0;
+}
+
+.nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 500ms ease !important;
+}
+
+.nav-link:hover {
+    color: black !important;
+}
+
+#logout-link {
+    cursor:pointer;
+}
+
+/*____________Wecome msg and secondary navbar____________*/
+#nav2 {
+    border-bottom:1px solid rgb(200, 234, 255);
+}
+
+.welcome-msg {
+    margin:0;
+    padding: 0;
+    font-weight: 300;
+}
+
+.active {
+    border-radius: 1px;
+    border-bottom: 2px solid rgb(28, 107, 252);
+}
+
+/*__________body content_________*/
+.main-content {
+    margin-bottom: 30px;
+}
+
+marquee{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px;
+    font-size: 3em;
+}
+
+.smallcaps {
+    font-size: .7em;
+}
+
+.container {
+    padding-bottom: 40px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.formView {
+    width: 50%;
+    margin: 5px auto;
+}
+
+.form-control {
+    height: 50px;
+}
+
+.btn {
+    padding: 9px 50px;
+}
+
+.modal-header, .modal-footer {
+    padding: 5px 15px;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.modal-body .btn {
+    padding: 5px 25px;
+    float: right;
+}
+
+
+
+/*________Footer style________*/
+.footer-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    box-shadow: 0px -3px 7px 0px rgb(223, 223, 223);;
+    padding-top: 40px;
+    background-color: white;
+}
+
+.footer-heading {
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.footer-link {
+    color: grey;
+    text-decoration: none;
+    font-weight: 400;
+    transition: 500ms ease;
+}
+
+.footer-link:hover {
+    color: black;
+
+}
+
+.address-container {
+    position: relative;
+    right: -100px;
+}
+
+.address {
+    font-style:normal;
+    margin-left: 20px;
+    color: gray;
+    font-weight: lighter;
+}
+
+
+.social-container {
+    text-align: center;
+}
+
+.links-container {
+    margin-top: 60px;
+}
+
+.facebook-link:hover {
+    color: #3b5998;
+}
+
+.twitter-link:hover {
+    color: #00acee;
+}
+
+.instagram-link:hover {
+    color: #c32aa3;
+}
+
+.btt {
+    float: right;
+    margin-right: 100px;
+    font-size: 18px;
+}
+
+.footnote-container {
+    padding-top: 10px;
+    background-color: white;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.footnote {
+    color:rgb(194, 194, 194);
+}
+
+/*__________RWD Media Queries__________*/
+@media (max-width: 991.98px) {
+    .address-container {
+        display: none;
+    }
+
+    .footer-container {
+        display: block;
+        padding-bottom: 8px;
+    }
+
+    .btt {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .formView {
+        width: 80%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .links-container {
+        margin-top: 30px;
+    }
+}
